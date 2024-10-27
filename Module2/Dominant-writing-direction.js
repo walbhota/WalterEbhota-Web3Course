@@ -55,6 +55,6 @@ function dominantDirection(text) {
     return scripts.reduce((a, b) => (a.count > b.count ? a : b)).name;
   }
   
-  console.log(dominantDirection("Hello!"));  // → ltr
-  console.log(dominantDirection("Hey, مساء الخير"));  // → rtl
+  console.log(dominantDirection("Hello!")); 
+  console.log(dominantDirection("Hey, مساء الخير")); 
   
