@@ -11,7 +11,7 @@ function every(array, test) {
   
 
   
-  function every(array, test) {
+function every(array, test) {
     return !array.some(element => !test(element));
   }
   
