@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elements by Tag Name</title>
+</head>
+<body>
+
+  <h1>Heading with a <span>span</span> element.</h1>
+  <p>A paragraph with <span>one</span>, <span>two</span> spans.</p>
+
+  <script>
+    function byTagName(node, tagName) {
+      let elements = []; 
+      tagName = tagName.toUpperCase(); 
+
+      function search(node) {
+        
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          
+          if (node.nodeName === tagName) {
+            elements.push(node); 
+          }
+          
+          for (let child of node.childNodes) {
+            search(child);
+          }
+        }
+      }
+
+      search(node); 
+      return elements; 
+    }
+
+    // Test cases
+    console.log(byTagName(document.body, "h1").length); 
+    console.log(byTagName(document.body, "span").length); 
+    let para = document.querySelector("p");
+    console.log(byTagName(para, "span").length); 
+  </script>
+
+</body>
+</html>
