@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cat’s Hat Animation</title>
+  <style>
+    body {
+      min-height: 200px;
+    }
+    img {
+      position: absolute; /* Absolute positioning for both images */
+    }
+  </style>
+</head>
+<body>
+
+  <img src="cat.png" id="cat" style="position: absolute;">
+  <img src="hat.jpg" id="hat" style="position: absolute;">
+
+  <script>
+    let cat = document.querySelector("#cat");
+    let hat = document.querySelector("#hat");
+
+    let angle = 0;
+    let lastTime = null;
+
+    function animate(time) {
+      if (lastTime != null) angle += (time - lastTime) * 0.001;
+      lastTime = time;
+
+      // Position the cat on an elliptical path
+      cat.style.top = (Math.sin(angle) * 40 + 40) + "px";
+      cat.style.left = (Math.cos(angle) * 200 + 230) + "px";
+
+      // Position the hat at the opposite angle on the same path
+      hat.style.top = (Math.sin(angle + Math.PI) * 40 + 40) + "px";
+      hat.style.left = (Math.cos(angle + Math.PI) * 200 + 230) + "px";
+
+      // Request the next frame
+      requestAnimationFrame(animate);
+    }
+
+    // Start the animation
+    requestAnimationFrame(animate);
+  </script>
+
+</body>
+</html>
