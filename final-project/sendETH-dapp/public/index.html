@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send ETH DApp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Send ETH DApp</h1>
+    <div class="center">
+      <button id="connectButton">Connect Wallet</button>
+    </div>
+    <p id="account">Not connected</p>
+    <p id="balance">Balance: N/A</p>
+    <h2>Send ETH</h2>
+    <input type="text" id="recipient" placeholder="Recipient Address" />
+    <input type="text" id="amount" placeholder="Amount in ETH" />
+    <div class="center">
+      <button id="sendButton">Send ETH</button>
+    </div>
+    
+    <!-- Voting Section -->
+    <div class="vote-section">
+      <h2>Vote for Proposal</h2>
+      <div class="center">
+        <button id="voteProposal1">Vote for Proposal 1</button>
+        <button id="voteProposal2">Vote for Proposal 2</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="bundle.js"></script>
+</body>
+</html>
